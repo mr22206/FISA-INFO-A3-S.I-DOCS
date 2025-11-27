@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  base: '/FISA-INFO-A3-S.I-DOCS/',
   title: "Projet XANADU",
   description: "Architecture, Sécurité et Exploitation du SI",
   themeConfig: {
