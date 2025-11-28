@@ -2,9 +2,13 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   base: '/FISA-INFO-A3-S.I-DOCS/',
-  title: "Projet XANADU",
-  description: "Architecture, Sécurité et Exploitation du SI",
+  title: "Documentation Projet XANADU",
+  description: "Cartographie, Sécurité & Infrastructure",
   themeConfig: {
+    search: {
+      provider: 'local'
+    },
+
     nav: [
       { text: 'Accueil', link: '/' },
       { text: 'Cartographie', link: '/cartographie/architecture-si' },
@@ -28,7 +32,20 @@ export default defineConfig({
           { text: 'Questionnaire & Audit', link: '/securite/audit' },
           { text: 'Politique de Filtrage', link: '/securite/politique-filtrage' },
           { text: 'GPO & Durcissement', link: '/securite/gpo' },
-          { text: 'Gestion des Identités (IAM)', link: '/securite/iam' }
+          { text: 'Gestion des Identités (IAM)', link: '/securite/iam' },
+          { text: 'CIDT (Confidentialité, Intégrité...)', link: '/securite/cidt' }
+        ]
+      },
+      {
+        text: 'Infrastructure',
+        items: [
+          { text: 'Plan d\'adressage', link: '/infra/adressage-ip' }
+        ]
+      },
+      {
+        text: 'Scripts',
+        items: [
+          { text: 'Introduction', link: '/scripts/introduction' }
         ]
       },
       {
