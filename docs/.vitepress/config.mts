@@ -12,52 +12,67 @@ export default defineConfig({
     nav: [
       { text: 'Accueil', link: '/' },
       { text: 'Cartographie', link: '/cartographie/architecture-si' },
-      { text: 'Sécurité', link: '/securite/politique-filtrage' },
-      { text: 'Exploitation', link: '/scripts/gestion-quotidienne' }
+      { text: 'Sécurité', link: '/securite/iam' },
+      { text: 'Exploitation', link: '/scripts/introduction' }
     ],
 
     sidebar: [
       {
-        text: '1. Cartographie & Infra',
+        text: '1. Cartographie & Infrastructure',
+        collapsed: false,
         items: [
           { text: 'Architecture SI & Réseau', link: '/cartographie/architecture-si' },
           { text: 'Architecture Active Directory', link: '/cartographie/active-directory' },
+          { text: 'Plan d\'adressage IP', link: '/infra/adressage-ip' },
           { text: 'Plan de Sauvegarde (3-2-1)', link: '/infra/sauvegarde' },
           { text: 'Matrice des Flux', link: '/cartographie/flux' }
         ]
       },
       {
         text: '2. Sécurité du SI',
+        collapsed: false,
         items: [
-          { text: 'Questionnaire & Audit', link: '/securite/audit' },
-          { text: 'Politique de Filtrage', link: '/securite/politique-filtrage' },
-          { text: 'GPO & Durcissement', link: '/securite/gpo' },
           { text: 'Gestion des Identités (IAM)', link: '/securite/iam' },
-          { text: 'CIDT (Confidentialité, Intégrité...)', link: '/securite/cidt' }
-        ]
-      },
-      {
-        text: 'Infrastructure',
-        items: [
-          { text: 'Plan d\'adressage', link: '/infra/adressage-ip' }
-        ]
-      },
-      {
-        text: 'Scripts',
-        items: [
-          { text: 'Introduction', link: '/scripts/introduction' }
+          { text: 'GPO & Durcissement', link: '/securite/gpo' },
+          { text: 'Politique de Filtrage', link: '/securite/politique-filtrage' },
+          { text: 'Questionnaire & Audit', link: '/securite/audit' },
+          { text: 'CIDT (Confidentialité, etc.)', link: '/securite/cidt' }
         ]
       },
       {
         text: '3. Exploitation & Scripts',
+        collapsed: false,
         items: [
-          { text: 'Scripts d\'administration', link: '/scripts/gestion-quotidienne' },
+          { text: 'Introduction aux Scripts', link: '/scripts/introduction' },
           { text: 'Supervision & Alerting', link: '/scripts/supervision' },
-          { text: 'Procédures PRA/PCA', link: '/scripts/pra' }
+          { text: 'Procédures PRA/PCA', link: '/scripts/pra' },
+          {
+            text: 'Scripts PowerShell',
+            collapsed: true,
+            items: [
+              { text: 'Onboarding Utilisateur', link: '/scripts/ps-onboarding-user' },
+              { text: 'Offboarding Utilisateur', link: '/scripts/ps-offboarding-user' },
+              { text: 'Audit Comptes Inactifs', link: '/scripts/ps-audit-comptes' },
+              { text: 'Sauvegarde GPO', link: '/scripts/ps-backup-gpo' },
+              { text: 'Rapport Permissions NTFS', link: '/scripts/ps-rapport-ntfs' },
+              { text: 'Déploiement Logiciel', link: '/scripts/ps-deploy-software' },
+              { text: 'Nettoyage Profils', link: '/scripts/ps-clean-profiles' },
+            ]
+          },
+          {
+            text: 'Scripts Bash',
+            collapsed: true,
+            items: [
+              { text: 'Sauvegarde Laboratoire', link: '/scripts/bash-backup-lab' },
+              { text: 'Surveillance Système', link: '/scripts/bash-check-health' },
+              { text: 'Rotation des Logs', link: '/scripts/bash-rotate-logs' },
+            ]
+          }
         ]
       },
       {
         text: 'Gestion de Projet',
+        collapsed: false,
         items: [
           { text: 'Suivi & Planning', link: '/projet/suivi' }
         ]
@@ -65,7 +80,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/' }
+      { icon: 'github', link: 'https://github.com/mr22206/FISA-INFO-A3-S.I-DOCS' }
     ],
     
     footer: {
